@@ -1,37 +1,24 @@
-تمرین 1 :
-جستجوی پیشرفته:
+تمرین 2 :
 
-    mkdir practice
-    cd practice
+معماری یک خطی :
+mkdir -p projects/assets/css projects/assets/pages projects/assets/py
 
-    man ls
-    /-S
-    ls -S
+ازمایشگاه پیوندها :
+echo "Hello" > info.txt
+ln info.txt h_info.txt
+ln -s info.txt s_info.txt
+rm info.txt
+cat h_info.txt -> Hello
+cat s_info.txt -> cat: s_info.txt: No such file or directory
 
-    mv small.txt
-    mv medium.txt
+با حذف فایل اصلی هاردلینک همچنان قابل استفاده است
+اما سافت‌ لینک شکسته می‌شود، چون مقصد آن دیگر وجود ندارد.
 
-    ls -LS
+جستجو در كتابخانه :
 
-خروجی : نمایش فایل های ساخته شده در فولدر ساخته شده
+    man rm
+    /force -> -f , --force
+    touch test.txt
+    rm -f test.txt
 
-تحقیق معماری :
-
-/bin :
-محل دستورهای عمومی سیستم
-/sbin :
-محل دستور های ابزار های مدیریتی
-
-ترسیم نقشه :
-
-sudo apt install tree
-
-tree -d -L 1 / | grep -E 'bin|sbin|etc|home|var'
-
-خروجی :
-
-├── bin -> usr/bin
-├── etc
-├── home
-├── sbin -> usr/sbin
-└── var
+سوئیچ -f یا --force برای حذف اجباری فایل‌ها بدون درخواست تأیید استفاده می‌شود همچنین اگر فایل وجود نداشته باشد خطای مربوط به نبودن فایل نمایش داده نمی‌شود.
